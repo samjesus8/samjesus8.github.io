@@ -28,7 +28,11 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      # Step 5: Deploy to GitHub Pages
+      # Step 5: Create a .nojekyll file
+      - name: Create .nojekyll file
+        run: echo > build/.nojekyll
+
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
